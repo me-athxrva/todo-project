@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    font-family: 'poppins', sans-serif;
+    background: #F9FBF2;
+}
+#main_container{
+    width: 100vw;
+    height: 100vh;
+}
+#navbar{
+    padding: 15px 30px;
+}
+#logo{
+    color: black;
+    font-weight: 600;
+    font-size: 2.7rem;
+    display: inline;
+}
+#choose_color{
+    list-style: none;
+    display: flex;
+}
+#choose_color li{
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+#choose_color li:nth-child(1){
+    background-color: #ffc0cb;
+}
+#choose_color li:nth-child(2){
+    background-color: #ffc965;
+}
+#choose_color li:nth-child(3){
+    background-color: #adff2f;
+}
+#choose_color li:nth-child(4){
+    background-color: #81ffff;
+}
+#choose_color li:nth-child(5){
+    background-color: #a9a7fd;
+}
+
+#resetBtn{
+    padding: 15px;
+    border-radius: 50px;
+    border: 2px solid gray;
+    width: auto;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+#resetBtn p{
+    margin-right: 10px;
+}
+
+#notes_container{
+    padding: 20px 40px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.note{
+    background-color: #adff2f;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 200px;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.note textarea{
+    padding: 10px;
+    width: 70%;
+    height: 70%;
+    margin: 5px;
+    position: absolute;
+    top: 5%;
+    resize: none;
+    background-color: transparent;
+    border-radius: 25px;
+    mix-blend-mode: difference;
+}
+.note button{
+    width: 50%;
+    bottom: 5%;
+    position: absolute;
+    border-radius: 50px;
+    border: 1px solid black;
+}
+
+/* Media Queries */
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    #choose_color li{
+        margin: 1px;
+        height: 40px;
+        width: 40px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    #resetBtn{
+        margin: 0px;
+        padding: auto;
+    }
+    #resetBtn p{
+        margin-right: 10px;
+    }
+    #choose_color{
+        list-style: none;
+        display: flex;
+        padding: 0;
+    }
+
+    #notes_container{
+        display: grid;
+    }
+    .note{
+        width: 40vw;
+        height: 200px;
+    }
+    .note button{
+        height: 4vh;
+    }
+}
