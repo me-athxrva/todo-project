@@ -93,7 +93,6 @@ html,body{
     resize: none;
     background-color: transparent;
     border-radius: 25px;
-    mix-blend-mode: difference;
 }
 .note button{
     width: 50%;
