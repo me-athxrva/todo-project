@@ -75,30 +75,28 @@ html,body{
 .note{
     background-color: #adff2f;
     display: flex;
-    flex-direction: column;
-    width: 150px;
-    height: 200px;
     border-radius: 25px;
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: 10px;
 }
-.note textarea{
+.note input{
     padding: 10px;
     width: 70%;
     height: 70%;
-    margin: 5px;
-    position: absolute;
+    margin-right: 5px;
     top: 5%;
     resize: none;
     background-color: transparent;
-    border-radius: 25px;
+    border: 2px solid white;
+    border-radius: 50px;
 }
 .note button{
-    width: 50%;
+    height: 50px;
+    width: 50px;
     bottom: 5%;
-    position: absolute;
-    border-radius: 50px;
+    border-radius: 50%;
     border: 1px solid black;
 }
 
@@ -131,13 +129,13 @@ html,body{
     }
 
     #notes_container{
-        display: grid;
+        display: block;
     }
     .note{
-        width: 40vw;
-        height: 200px;
+        width: 100%;
     }
     .note button{
-        height: 4vh;
+        height: 50px;
+        width: 50px;
     }
 }
