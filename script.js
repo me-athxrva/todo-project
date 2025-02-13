@@ -1,7 +1,10 @@
-var color_click = document.querySelectorAll('#choose_color li');
-var reset_btn = document.getElementById('resetBtn');
-var notes = document.getElementsByClassName('note');
-
+let color_click = document.querySelectorAll('#choose_color li');
+let reset_btn = document.getElementById('resetBtn');
+let notes = document.getElementsByClassName('note');
+let addBtn = document.getElementById('addNote');
+let deleteBtn = document.querySelectorAll('#note_container span div button');
+let note_text = document.getElementById('text');
+let color;
 
 function getContrastTextColor(color) {
     let r, g, b, a = 1;
@@ -48,16 +51,41 @@ function color_set(){
     });
     notes[0].style.background = (color_click[0].style.background);
     notes[0].firstElementChild.style.color = getContrastTextColor(notes[0].style.background);
+    color = notes[0].style.background;
 }
 
-function add_note(){
-    
+function add_note(note){
+    const originalElement = document.getElementById("note_container");
+    const clonedElement = originalElement.cloneNode(true);
+    clonedElement.firstElementChild.innerText = note;
+    clonedElement.style.background = color;
+    clonedElement.style.color = getContrastTextColor(color);
+    originalElement.parentNode.appendChild(clonedElement);
+    // originalElement.insertAdjacentElement("beforebegin", clonedElement);
+
+    addDelete(clonedElement.childNodes[3].childNodes[3])
 }
+
+function addDelete(button) {
+    button.addEventListener("click", function () {
+        this.parentElement.parentElement.remove(); 
+    });
+}
+
+addBtn.addEventListener('click',()=>{
+    if (note_text.value == ""){
+        console.warn("empty note")
+    } else {
+        add_note(note_text.value)
+    }
+})
+
 
 color_click.forEach(ele => {
     ele.addEventListener('click',()=>{
         notes[0].style.background = (ele.style.background);
         notes[0].firstElementChild.style.color = getContrastTextColor(notes[0].style.background);
+        color = notes[0].style.background;
     })
 });
 
@@ -75,5 +103,6 @@ reset_btn.addEventListener('click',()=>{
 
 window.addEventListener('DOMContentLoaded',()=>{
     color_set()
+    deleteBtn.forEach(addDelete);
 })
 
