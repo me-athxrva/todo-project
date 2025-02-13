@@ -61,7 +61,6 @@ function add_note(note){
     clonedElement.style.background = color;
     clonedElement.style.color = getContrastTextColor(color);
     originalElement.parentNode.appendChild(clonedElement);
-    // originalElement.insertAdjacentElement("beforebegin", clonedElement);
 
     addDelete(clonedElement.childNodes[3].childNodes[3])
 }
